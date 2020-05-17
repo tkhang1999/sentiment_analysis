@@ -63,8 +63,8 @@ def get_coefs(word,*arr): return word, np.asarray(arr, dtype='float32')
 embeddings_index = dict(get_coefs(*o.strip().split()) for o in open(EMBEDDING_FILE, encoding="utf8"))
 
 all_embs = np.stack(embeddings_index.values())
-emb_mean,emb_std = all_embs.mean(), all_embs.std()
-emb_mean,emb_std
+emb_mean, emb_std = all_embs.mean(), all_embs.std()
+print(emb_mean, emb_std)
 
 word_index = tokenizer.word_index
 nb_words = min(MAX_NB_WORDS, len(word_index))
